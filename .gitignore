@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+blog/.gitignore
+blog/package-lock.json
+blog/package.json
+blog/README.md
+blog/public/favicon.ico
+blog/public/index.html
+blog/public/logo192.png
+blog/public/logo512.png
+blog/public/manifest.json
+blog/public/robots.txt
