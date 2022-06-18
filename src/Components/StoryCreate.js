@@ -1,14 +1,15 @@
 import React from "react";
 import '../Style/StoryCreate.css';
-import 'bootstrap-icons'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const StoryCreate = (props) => {
     return (
-        <div>
-            <form class="example" action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search"/>
-                    <button type="submit"><i class="bi bi-search"></i></button>
-            </form>
+        <div className="mainSearchContainer">
+            <div className="searchContainer">
+                <i className="bi bi-search"></i>
+                <input className="searchBox" type="search" name="search" placeholder="Search..." />
+                <i className="bi bi-x-circle"></i>
+            </div>
         </div>
     )
 }
