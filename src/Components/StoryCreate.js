@@ -6,7 +6,9 @@ const StoryCreate = (props) => {
         alert(`${e.target.value}`)
     }
     return (
-        <TitleInput size='large' handelChange={handelSearch} placeHolder='Enter Title' value={'data'} error={''} />
+        <div>
+            <TitleInput size='large' handelChange={handelSearch} placeHolder='Enter Title' value={'data'} error={''} />
+        </div>
     )
 }
 export default StoryCreate
