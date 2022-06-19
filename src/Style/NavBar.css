@@ -1,5 +1,6 @@
 .NavButton {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     border: 2px solid #006666;
@@ -7,24 +8,19 @@
     border-right-style: none;
     border-left-style: none;
     background-color: #03cccc8c;
-    padding: 20px;
-    float: left;
-    width:100%;
 }
 
 .post,
 .publish {
-    width:60%;
     border-radius: 4px;
     color: white;
     border: none;
     padding: 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-flexbox;
     font-size: 16px;
     cursor: pointer;
-    margin: 20px 2px;
+    margin: 10px 20px;
 }
 
 .post {
@@ -35,8 +31,3 @@
     background-color: #54c3e7;
 }
 
-@media screen and (max-width: 800px) {
-    .post,.publish{
-        width: 100%;
-    }
-}
