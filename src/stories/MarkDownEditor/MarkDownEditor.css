@@ -10,6 +10,15 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
   }
+  .small{
+    width:50%;
+  }
+  .medium{
+    width:75%;
+  }
+  .large{
+    width:100%;
+  }
   
   textarea {
     background: #eff1f5;
