@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
-const StoryPublish=(props)=>{
+import "../stories/MarkDownEditor/MarkDownEditor.css";
 
-    return(
-        <h1>StoryPublish</h1>
-    )
+export default function StoryPublish() {
+  const [markdown, setMarkdown] = useState("Heading");
+
+  return (
+    <div className="markdown__container">
+      <textarea
+        value={markdown}
+        onChange={(e) => setMarkdown(e.target.value)}
+      />
+
+      <ReactMarkdown source={markdown} className="markdown__preview" />
+    </div>
+  );
 }
-
-export default StoryPublish
