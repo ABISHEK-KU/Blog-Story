@@ -7,6 +7,7 @@ function TitleInput(props){
         <div className="InputContainer">
             <div className="InputTitle">
             <input className={`title title-${size}`} onChange={handelChange} placeholder={placeHolder?`${placeHolder}`:''} value={value}/>
+            <br/>
             <p className={`error error-${size}`}>{error}</p>
             </div>
         </div>

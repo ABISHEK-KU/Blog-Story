@@ -4,7 +4,7 @@ import './MarkDownEditorDisplay.css'
 
 function MarkDownEditorDisplay(props) {
 
-  const { size = 'medium', markDown ,handelChange } = props 
+  const { size = 'medium', markDown ,handelChange,error} = props 
 
   return (
     <div className="markdown__container">
@@ -16,6 +16,8 @@ function MarkDownEditorDisplay(props) {
         <ReactMarkdown className={`markdown__preview --${size}`}>{markDown}</ReactMarkdown>
       </article>
       </div>
+      <br/>
+      <p className="error">{error}</p>
     </div>
   )
 }

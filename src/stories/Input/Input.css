@@ -3,7 +3,13 @@
     display: flex;
     justify-content: center;
 }
-
+.selectdiv{
+    font-size: medium;
+    font-weight: 100;
+    color:rgb(136, 136, 136);
+    border: none;
+    outline: none;
+}
 
 .input-small,
 .input-medium,
@@ -59,7 +65,6 @@
 .medium {
     height: 2.5rem;
     font-size: 1.5rem;
-
 }
 
 .large {
