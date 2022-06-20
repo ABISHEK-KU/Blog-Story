@@ -4,6 +4,7 @@
     justify-content: center;
 }
 
+
 .input-small,
 .input-medium,
 .input-large {
@@ -26,17 +27,17 @@
 
 .-small {
     width: 20%;
-    max-height:30px;
+    max-height: 30px;
 }
 
 .-medium {
     width: 40%;
-    max-height:40px;
+    max-height: 40px;
 }
 
 .-large {
-    width:60%;
-    max-height:50px;
+    width: 60%;
+    max-height: 50px;
 }
 
 .bi-search {
