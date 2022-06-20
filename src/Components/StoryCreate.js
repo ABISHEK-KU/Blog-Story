@@ -1,13 +1,23 @@
 import React from "react";
-import '../Style/StoryCreate.css'
+import '../Style/StoryCreate.css';
 import TitleInput from '../stories/TitleInput/TitleInput';
+import MarkDownEditor from "../stories/MarkDownEditor/MarkDownEditor";
+import Button from "../stories/Button/Button";
 const StoryCreate = (props) => {
-    const handelSearch=(e)=>{
+    const handelSearch = (e) => {
         alert(`${e.target.value}`)
     }
     return (
         <div>
-            <TitleInput size='large' handelChange={handelSearch} placeHolder='Enter Title' value={'data'} error={''} />
+            <div className="inputCont">
+                <TitleInput size='medium' handelChange={handelSearch} placeHolder='Enter Title' value={'data'} error={''} />
+            </div>
+            <div className="textCont">
+                <MarkDownEditor size='large' handelChange={''} markDown={'heading'} />
+            </div>
+            <div className="ButtonCont">
+            <Button variant={`primary`} children={`Publish`}/>
+            </div>
         </div>
     )
 }
