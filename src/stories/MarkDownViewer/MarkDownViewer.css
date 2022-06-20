@@ -1,0 +1,34 @@
+
+.markdownDisplayCont{
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.ViewerTitle{
+  text-align: center;
+}
+.-fontsmall {
+  font-size: small;
+}
+
+.-fontmedium {
+  font-size: medium;
+}
+
+.-fontlarge {
+  font-size: large;
+}
+
+.markdownDisplay {
+  width: 400px;
+  min-height:50vh;
+  max-height:fit-content;
+  background-color: rgb(204, 197, 197);
+  color:black;
+  border-radius: 4px;
+  padding:1px;
+}

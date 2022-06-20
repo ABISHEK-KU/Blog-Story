@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import './MarkDownEditor.css'
+import './MarkDownEditorDisplay.css'
 
-function MarkDownEditor(props) {
+function MarkDownEditorDisplay(props) {
 
   const { size = 'medium', markDown ,handelChange } = props 
 
@@ -20,4 +20,4 @@ function MarkDownEditor(props) {
   )
 }
 
-export default MarkDownEditor
+export default MarkDownEditorDisplay

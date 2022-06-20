@@ -1,11 +1,11 @@
 import React from "react";
-import MarkDownEditor from './MarkDownEditorDisplay';
+import MarkDownEditorDisplay from './MarkDownEditorDisplay';
 
 export default {
-    title:'MarkDownEditor',
-    component:MarkDownEditor
+    title:'MarkDownEditorDisplay',
+    component:MarkDownEditorDisplay
 }
 
-export const Small = () => <MarkDownEditor size='small'/>
-export const Medium = () => <MarkDownEditor size='medium'/>
-export const Large = () => <MarkDownEditor size='large'/>
+export const Small = () => <MarkDownEditorDisplay size='small'/>
+export const Medium = () => <MarkDownEditorDisplay size='medium'/>
+export const Large = () => <MarkDownEditorDisplay size='large'/>
