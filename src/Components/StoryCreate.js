@@ -29,8 +29,8 @@ const reducer = (state = initialState, action) => {
         case 'PUBLISH_DATA':{
             (localStorage.getItem('markDown')===null)?localStorage.setItem('markDown',JSON.stringify([])):null
             const publishedData=JSON.parse(localStorage.getItem('markDown'))
-            localStorage.setItem('markDown',JSON.stringify([...publishedData,action.payload]))
-            return {...state,    title: '',markdown:'# Heading',titleError:'',MarkDownError:'',}
+            localStorage.setItem('markDown',JSON.stringify([action.payload,...publishedData]))
+            return {...state,title: '',markdown:'# Heading',titleError:'',MarkDownError:'',}
         }
         default: {
             return { ...state }
