@@ -4,20 +4,21 @@ import './MarkDownEditorDisplay.css'
 
 function MarkDownEditorDisplay(props) {
 
-  const { size = 'medium', markDown ,handelChange,error} = props 
+  const { size = 'medium', markDown, handelChange, error, type } = props
 
   return (
     <div className="markdown__container">
-      <div>
-      <textarea value={markDown} className={`--${size}`} onChange={handelChange}/>
+      <div className="markdown__SubContainer">
+        <div>
+          <textarea value={markDown} className={`--${size}`} onChange={handelChange} type={type} />
+        </div>
+        <div>
+          <article className="content">
+            <ReactMarkdown className={`markdown__preview --${size}`}>{markDown}</ReactMarkdown>
+          </article>
+        </div>
       </div>
-      <div>
-      <article className="content">
-        <ReactMarkdown className={`markdown__preview --${size}`}>{markDown}</ReactMarkdown>
-      </article>
-      </div>
-      <br/>
-      <p className="error">{error}</p>
+      <span className="error">{error}</span>
     </div>
   )
 }

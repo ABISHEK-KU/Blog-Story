@@ -1,9 +1,6 @@
 .InputContainer{
     width:100%;
-    display: flex;
-    justify-content:center ;
-    align-items: center;
-    margin: auto;
+    text-align: center;
 }
 .InputTitle{
     width:100%;
@@ -34,7 +31,7 @@
 }
 
 .error{
-    color:red
+    color:red;
 }
 .error-small{
     font-size: small;

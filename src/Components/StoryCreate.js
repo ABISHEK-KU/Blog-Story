@@ -57,7 +57,7 @@ const StoryCreate = (props) => {
     const handelPublish=(e)=>{
         e.preventDefault()
         let errorStatus=false
-        let existData=JSON.parse(localStorage.getItem('markDown')).length>0&&JSON.parse(localStorage.getItem('markDown')).some((e)=>{
+        let existData=JSON.parse(localStorage.getItem('markDown'))!==null && JSON.parse(localStorage.getItem('markDown')).filter((e)=>{
             return e.title===data.title
         })
 
@@ -79,7 +79,7 @@ const StoryCreate = (props) => {
                 type:'ERROR_TITLE',
                 payload:'Title Is Too Lengthy'
             })
-        } else if(existData){
+        } else if(existData.length>0){
             errorStatus=true
             dispatch({
                 type:'ERROR_TITLE',
@@ -87,7 +87,7 @@ const StoryCreate = (props) => {
             })
         }
 
-        if(data.markdown.length==0){
+        if(data.markdown.length===0){
             errorStatus=true
             dispatch({
                 type:'ERROR_MARKDOWN',
@@ -107,10 +107,10 @@ const StoryCreate = (props) => {
     return (
         <div>
             <div className="inputCont">
-                <TitleInput size='medium' handelChange={(e) => { handelSearch(e) }} placeHolder='Enter Title' value={data.title} error={data.titleError} />
+                <TitleInput size='medium' handelChange={(e) => { handelSearch(e) }} placeHolder='Enter Title' value={data.title} error={data.titleError} type={'text'} />
             </div>
             <div className="textCont">
-                <MarkDownEditorDisplay size='large' handelChange={(e)=>{handelMarkdownValue(e)}} markDown={data.markdown} error={data.MarkDownError}/>
+                <MarkDownEditorDisplay size='large' handelChange={(e)=>{handelMarkdownValue(e)}} markDown={data.markdown} error={data.MarkDownError} type={'text'}/>
             </div>
             <div className="ButtonCont">
                 <Button variant={`primary`} children={`Publish`} handelClick={handelPublish}/>

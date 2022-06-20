@@ -2,14 +2,13 @@ import React from "react";
 import './TitleInput.css'
 
 function TitleInput(props){
-    const { size = 'medium',handelChange,placeHolder,value,error} = props
+    const { size = 'medium',handelChange,placeHolder,value,error,type} = props
     return (
         <div className="InputContainer">
             <div className="InputTitle">
-            <input className={`title title-${size}`} onChange={handelChange} placeholder={placeHolder?`${placeHolder}`:''} value={value}/>
-            <br/>
-            <p className={`error error-${size}`}>{error}</p>
+            <input className={`title title-${size}`} type={type} onChange={handelChange} placeholder={placeHolder?`${placeHolder}`:''} value={value}/>
             </div>
+            <span className={`error error-${size}`}>{error}</span>
         </div>
     )
 }
