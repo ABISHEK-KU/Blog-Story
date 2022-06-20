@@ -9,7 +9,7 @@ function Input(props) {
         <div className="container">
             <div className={`searchContainer -${size}`}>
                 <i className={`bi bi-search ${size}`} onClick={searchClick}></i>
-                <select className="selectdiv" onChange={handelOnSelect}>
+                <select className="select" onChange={handelOnSelect}>
                     <option disabled={true} value=''>Search By</option>
                     {selectData.map((e)=>{
                         return<option key={e} value={e}>{e}</option>

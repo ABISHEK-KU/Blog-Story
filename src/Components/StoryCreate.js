@@ -98,6 +98,7 @@ const StoryCreate = (props) => {
         !errorStatus&& dispatch({
             type:'PUBLISH_DATA',
             payload:{
+                id:Date.now(),
                 title:data.title,
                 markDownData:data.markdown
             }

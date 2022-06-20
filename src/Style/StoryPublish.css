@@ -1,5 +1,25 @@
-.markDownViewer{
+.markDownViewer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 20px;
     overflow: scroll;
-    height:500px;
+    height: 500px;
+}
+
+.empty {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: large;
+}
+
+.Edit-icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    color:red;
+    font-size: 30px;
+    text-align: center;
 }

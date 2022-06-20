@@ -3,12 +3,15 @@
     display: flex;
     justify-content: center;
 }
-.selectdiv{
+.select{
     font-size: medium;
     font-weight: 100;
     color:rgb(136, 136, 136);
     border: none;
     outline: none;
+    min-width:100px;
+    display: flex;
+    justify-content: center;
 }
 
 .input-small,

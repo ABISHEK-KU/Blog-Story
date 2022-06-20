@@ -24,7 +24,8 @@
 }
 
 .markdownDisplay {
-  width: 400px;
+  width:fit-content;
+  min-width:400px;
   min-height:50vh;
   max-height:fit-content;
   background-color: rgb(204, 197, 197);

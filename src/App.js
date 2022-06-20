@@ -33,7 +33,6 @@ const App = (props) => {
 
   const selectData = ['Search By Title', 'Search By Post']
 
-  console.log(data.searchBy)
 
   const handelSearch = (e) => {
     dispatch({
@@ -58,7 +57,7 @@ const App = (props) => {
 
   return (
     <div>
-      <Input size='large'
+      <Input size='medium'
         searchClick={''}
         cancelClick={handelCancel}
         searchChange={(e) => {handelSearch(e)}}
