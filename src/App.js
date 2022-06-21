@@ -4,23 +4,27 @@ import Input from './stories/Input/Input';
 import StoryCreate from './Components/StoryCreate';
 import StoryPublish from './Components/StoryPublish';
 import NavBar from './Components/NavBar';
-import { Route } from 'react-router-dom';
+import { Route,withRouter} from 'react-router-dom';
 
 const initialState = {
   search: '',
-  searchBy: ''
+  searchBy: '',
+  searchData:''
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_SEARCH': {
-      return { ...state, search: action.payload }
+      return { ...state, searchData: action.payload }
     }
     case 'CLEAR_SEARCH': {
-      return { ...state, search: '' }
+      return { ...state, searchData: '',search:''}
     }
     case 'SEARCH_BY': {
       return { ...state, searchBy: action.payload }
+    }
+    case 'SEARCH':{
+      return {...state,}
     }
     default: {
       return { ...state }
@@ -33,7 +37,6 @@ const App = (props) => {
 
   const selectData = ['Search By Title', 'Search By Post']
 
-
   const handelSearch = (e) => {
     dispatch({
       type: 'SET_SEARCH',
@@ -41,6 +44,12 @@ const App = (props) => {
     })
   }
 
+  const handelClickSearch=()=>{
+    dispatch({
+      type:'SEARCH',
+      payload:data.searchData,
+    })
+  }
   const handelCancel = () => {
     dispatch({
       type: 'CLEAR_SEARCH'
@@ -54,21 +63,25 @@ const App = (props) => {
     })
   }
 
-
   return (
     <div>
       <Input size='medium'
-        searchClick={''}
+        searchClick={handelClickSearch}
         cancelClick={handelCancel}
         searchChange={(e) => {handelSearch(e)}}
         handelOnSelect={(e) => {handelSelect(e)}}
-        value={data.search}
+        value={data.searchData}
         selectData={selectData} />
       <NavBar />
       <Route path='/post' component={StoryCreate} exact={true} />
-      <Route path='/published' component={StoryPublish} exact={true} />
+      <Route path ='/published' render={(props)=>{
+            return <StoryPublish
+            filterData={data}
+            {...props}
+         />
+        }} exact={true}/>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
