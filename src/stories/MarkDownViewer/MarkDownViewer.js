@@ -4,16 +4,15 @@ import './MarkDownViewer.css'
 
 function MarkDownEditor(props) {
 
-  const { size = 'medium', markDownTitle, markDownData } = props 
+  const { size = 'medium', markDownData } = props
 
   return (
     <div>
-      <h1 className="ViewerTitle">{markDownTitle}</h1>
       <div className="markdownDisplayCont">
-      <article className="contentViewer">
-        <ReactMarkdown className={`markdownDisplay -font${size}`}>{markDownData}</ReactMarkdown>
-      </article>
-    </div>
+        <article className="contentViewer">
+          <ReactMarkdown className={`markdownDisplay -font${size}`}>{markDownData}</ReactMarkdown>
+        </article>
+      </div>
     </div>
   )
 }

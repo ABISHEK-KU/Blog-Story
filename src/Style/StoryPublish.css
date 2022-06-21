@@ -11,15 +11,17 @@
     font-size: large;
 }
 
-.Edit-icon {
+.Viewer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
 }
 
 .icon {
-    color:red;
+    color: red;
     font-size: 30px;
     text-align: center;
+    margin-left: 10px;
 }

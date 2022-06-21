@@ -1,4 +1,4 @@
-import React, { useReducer,useEffect} from "react";
+import React, { useReducer, useEffect } from "react";
 import '../Style/StoryPublish.css'
 import MarkDownViewer from '../stories/MarkDownViewer/MarkDownViewer'
 
@@ -18,20 +18,18 @@ const reducer = (state = initialState, action) => {
 }
 const StoryPublish = (props) => {
   const [data, dispatch] = useReducer(reducer, initialState)
-  const {filterData}=props
+  const { filterData } = props
 
-  console.log(filterData)
-
-  const updateData=()=>{
+  const updateData = () => {
     dispatch({
       type: 'UPDATE_DATA',
-      payload:localStorage.getItem('markDown') === null ? [] : JSON.parse(localStorage.getItem('markDown'))
+      payload: localStorage.getItem('markDown') === null ? [] : JSON.parse(localStorage.getItem('markDown'))
     })
   }
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     updateData()
-  },[JSON.parse(localStorage.getItem('markDown')).length])
+  }, [JSON.parse(localStorage.getItem('markDown')).length])
 
   const handelDelete = (id) => {
     const deleteData = data.post.filter((e) => {
@@ -42,15 +40,15 @@ const StoryPublish = (props) => {
   }
 
   const handelEdit = (e) => {
-    props.history.push({ pathname:'/post', state:e })
+    props.history.push({ pathname: '/post', state: e })
   }
 
-  const filteredPost=data.post.filter((e)=>{
-    if(filterData.searchBy==='Search By Title'){
+  const filteredPost = data.post.filter((e) => {
+    if (filterData.searchBy === 'Search By Title') {
       return e.title.toLowerCase().includes(filterData.search.toLowerCase())
-    }else if(filterData.searchBy==='Search By Post'){
+    } else if (filterData.searchBy === 'Search By Post') {
       return e.markDownData.toLowerCase().includes(filterData.search.toLowerCase())
-    }else{
+    } else {
       return e
     }
 
@@ -62,11 +60,12 @@ const StoryPublish = (props) => {
       {filteredPost.map((e) => {
         return (
           <div key={e.id}>
-            <div className="Edit-icon">
+            <div className="Viewer">
+              <h1 className="Viewer-Title">{e.title}</h1>
               <i className="bi bi-trash-fill icon" onClick={() => { handelDelete(e.id) }}></i>
               <i className="bi bi-pencil-square icon" onClick={() => { handelEdit(e) }}></i>
             </div>
-            <MarkDownViewer markDownTitle={e.title} markDownData={e.markDownData} />
+            <MarkDownViewer markDownData={e.markDownData} />
           </div>
         )
       })}

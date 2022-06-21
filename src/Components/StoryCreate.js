@@ -28,9 +28,9 @@ const reducer = (state = initialState, action) => {
         case 'PUBLISH_DATA': {
             localStorage.getItem('markDown') === null ? localStorage.setItem('markDown', JSON.stringify([])) : null
             const publishedData = JSON.parse(localStorage.getItem('markDown'))
-            localStorage.setItem('markDown', JSON.stringify([{id:action.payload.id, title: action.payload.title, markDownData: action.payload.markDownData} , ...publishedData]))
+            localStorage.setItem('markDown', JSON.stringify([{ id: action.payload.id, title: action.payload.title, markDownData: action.payload.markDownData }, ...publishedData]))
             action.payload.history.push('/published')
-            return { ...state, title: '', markdown: '# Heading', titleError: '', MarkDownError: ''}
+            return { ...state, title: '', markdown: '# Heading', titleError: '', MarkDownError: '' }
         }
         case 'SET_EDIT_DATA': {
             return { ...state, title: action.payload.title, markdown: action.payload.markDownData }
@@ -138,7 +138,7 @@ const StoryCreate = (props) => {
                         id: editData.id,
                         title: data.title,
                         markDownData: data.markdown,
-                        history:props.history
+                        history: props.history
                     }
                 })
             } else {
@@ -148,10 +148,10 @@ const StoryCreate = (props) => {
                         id: Date.now(),
                         title: data.title,
                         markDownData: data.markdown,
-                        history:props.history
+                        history: props.history
                     }
                 })
-            }   
+            }
         }
     }
 

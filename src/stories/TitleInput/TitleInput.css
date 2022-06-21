@@ -1,14 +1,16 @@
-.InputContainer{
-    width:100%;
+.InputContainer {
+    width: 100%;
     text-align: center;
 }
-.InputTitle{
-    width:100%;
+
+.InputTitle {
+    width: 100%;
     display: flex;
-    justify-content:center ;
+    justify-content: center;
     align-items: center;
 }
-.title{
+
+.title {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -17,30 +19,34 @@
     border-radius: 4px;
     box-sizing: border-box;
 }
-.title-small{
-    width:40%;
-    height:2rem;
+
+.title-small {
+    width: 40%;
+    height: 2rem;
 }
-.title-medium{
-    width:60%;
-    height:2.5rem;
+
+.title-medium {
+    width: 60%;
+    height: 2.5rem;
 }
-.title-large{
-    width:80%;
+
+.title-large {
+    width: 80%;
     height: 3rem;
 }
 
-.error{
-    color:red;
+.error {
+    color: red;
 }
-.error-small{
+
+.error-small {
     font-size: small;
 }
 
-.error-medium{
+.error-medium {
     font-size: medium;
 }
 
-.error-large{
+.error-large {
     font-size: large;
 }

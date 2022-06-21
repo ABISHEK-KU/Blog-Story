@@ -4,12 +4,12 @@ import Input from './stories/Input/Input';
 import StoryCreate from './Components/StoryCreate';
 import StoryPublish from './Components/StoryPublish';
 import NavBar from './Components/NavBar';
-import { Route,withRouter} from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
 const initialState = {
   search: '',
   searchBy: '',
-  searchData:''
+  searchData: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -18,13 +18,13 @@ const reducer = (state = initialState, action) => {
       return { ...state, searchData: action.payload }
     }
     case 'CLEAR_SEARCH': {
-      return { ...state, searchData: '',search:''}
+      return { ...state, searchData: '', search: '' }
     }
     case 'SEARCH_BY': {
       return { ...state, searchBy: action.payload }
     }
-    case 'SEARCH':{
-      return {...state,}
+    case 'SEARCH': {
+      return { ...state, search: action.payload }
     }
     default: {
       return { ...state }
@@ -44,10 +44,10 @@ const App = (props) => {
     })
   }
 
-  const handelClickSearch=()=>{
+  const handelClickSearch = () => {
     dispatch({
-      type:'SEARCH',
-      payload:data.searchData,
+      type: 'SEARCH',
+      payload: data.searchData,
     })
   }
   const handelCancel = () => {
@@ -68,18 +68,18 @@ const App = (props) => {
       <Input size='medium'
         searchClick={handelClickSearch}
         cancelClick={handelCancel}
-        searchChange={(e) => {handelSearch(e)}}
-        handelOnSelect={(e) => {handelSelect(e)}}
+        searchChange={(e) => { handelSearch(e) }}
+        handelOnSelect={(e) => { handelSelect(e) }}
         value={data.searchData}
         selectData={selectData} />
       <NavBar />
       <Route path='/post' component={StoryCreate} exact={true} />
-      <Route path ='/published' render={(props)=>{
-            return <StoryPublish
-            filterData={data}
-            {...props}
-         />
-        }} exact={true}/>
+      <Route path='/published' render={(props) => {
+        return <StoryPublish
+          filterData={data}
+          {...props}
+        />
+      }} exact={true} />
     </div>
   );
 }
